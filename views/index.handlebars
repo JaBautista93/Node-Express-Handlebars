@@ -1,51 +1,72 @@
-<h1>Ham-Node-Burger!</h1>
+<div class="container">
+	
+	<div class="row">
+	    <div class="center col s12">
+			<img src="/public/assets/img/burgers.jpg" alt="Hamburger App">
+	        <h1>Ham-Node-Burger App</h1>
+	        <p></p>
+	    </div>
+  	</div>
+	<!-- end row -->
 
-<main>
-  <div class="container">
-    <div class="row">
-      <!-- Column for available burgers and customer name -->
-      <div class="col s8">
-        {{#each burgers}}
-          {{#unless this.devoured}}
-            <div class="row">
-              <div class="burgerName">
-                  <div class='burgerAvailable'>{{this.name}}</div>
-              </div>
+	<div class="row">
+		<div class="col s12">
+			<div class="col s5">
+				<h2>Burgers Available To Eat!</h2>
+					<ul>
+					  {{#each burgers}}
+					    {{#unless this.devoured}}
+					      <li>
+					      	#
+					      	{{this.id}}
+					        {{this.burger_name}}
 
-              <div class="customerEats">
-                <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                  <input type="text" id="customerName" name="customerName" placeholder="Your Name">
-                  <button type="submit" class="eatBurgerButton fa fa-cutlery fa-2x" aria-hidden="true"></button>
-                </form>
-              </div>
-            </div>
-          {{/unless}}
-        {{/each}}
-      </div> <!-- End col s8 -->
+					        <form action="/{{this.id}}?_method=POST" method="POST">
+					          <input type="hidden" name="devoured" value="true">
+					          <button class="btn-primary" type="submit">Devour It!</button>
+					        </form>
 
-      <!-- Column for burgers that are no longer available -->
-      <div class="col s4">
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class='burgerEaten'>
-              <div>
-                {{this.name}} (eaten by {{this.Customer.name}})
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div> <!-- End col s4 -->
-    </div> <!-- End row -->
-  </div> <!-- End container -->
-</main>
+					      </li>
+					    {{/unless}}
+					  {{/each}}
+					</ul>
+		    </div>
+		    <div class="col s5">
+				<h2>Burgers That Have Been Eaten!</h2>
+				<ul>
+				  {{#each burgers}}
+				    {{#if this.devoured}}
+				      <li>
+				      	#
+				      	{{this.id}}
+				        {{this.burger_name}}
+				      </li>
+				    {{/if}}
+				  {{/each}}
+				 </ul>
+		    </div>
 
-<h2>Add A Burger Option</h2>
+		</div>
+	</div>
+	<!-- end row for displaying Available and Eaten Burgers -->
+	<div class="row">
+		    <div class="center col s12">
 
-<div class="row">
-  <div class="col s12">
-    <form action="/burgers" method="POST">
-      <input type="text" id="name" name="name" placeholder="decisions, decisions">
-      <button type="submit" class="addBurgerButton">Add The Burger</button>
-    </form>
-  </div>
-</div>
+				<h2>Add A Burger!</h2>
+
+				<form class="create-update-form" action="/" method="POST">
+
+				  <div class="form-group">
+				    <p>Enter a burger you want to order and click the Submit Order button.</p>
+				    <input type="text" id="ca" name="burger_name">
+				  </div>
+				  
+				  <button class="btn-primary" type="submit">Submit Order</button>
+				</form>
+
+		    </div>
+		
+	</div>
+	<!-- end row for adding a burger -->
+
+</div> <!-- end container -->
