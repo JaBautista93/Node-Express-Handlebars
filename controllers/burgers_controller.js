@@ -1,3 +1,4 @@
+
 /* require Express and instantiate a variable of type "Router"
 */
 var express = require('express');
@@ -9,7 +10,7 @@ var burgers  = require('../models/burger.js');
 // Create the routes and associated logic
 router.get('/', function(req, res) {
 
-  burgers.selectAll(function(data) {
+  burgers.all(function(data) {
     var hbsObject = {
       burgers: data
     };
@@ -19,7 +20,7 @@ router.get('/', function(req, res) {
 
 
 router.post('/', function(req, res) {
-  burgers.insertOne([
+  burger.insertOne([
     'burger_name',
   ], [
     req.body.burger_name
@@ -32,7 +33,7 @@ router.post('/', function(req, res) {
 
 router.post('/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
-  burgers.updateOne({
+  burger.updateOne({
     devoured: true
   }, condition, function(data) {
     res.redirect('/');
