@@ -1,179 +1,166 @@
-body {
-
-	margin: 0 auto; 
-
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-	background-color: white;
- }
-
-
- h1 {
- 	text-align: center;
- 	font-family: 'Fontdiner Swanky', cursive;
- 	font-size: 65px;
- 	margin: 50px;
- }
-
-ul {
-  list-style-type: none;
+html {
+    background-color: #FFC04C;
 }
 
- .burgerAvailable {
- 	font-family: 'Crafty Girls', cursive;
- 	font-weight: normal;
- 	font-size: 20px;
- 	text-align: center;
+body {
+    width: 75%;
+   margin: 0 auto; 
 
- 	border-radius: 25px;
- 	width: 100%;
- 	margin: 10px;
- 	padding: 10px;
- 	background-color: #b7ffc2;
- 	border: none;
- }
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   background-color: white;
+}
 
- .burgerAvailable:hover {
- 	background-color: #81ff94;
- }
+#cute_burger {
+    display: block;
+   margin: auto;
+}
 
- .burgerEaten {
- 	font-weight: normal;
- 	font-size: 20px;
- 	text-align: center;
+h1 {
+    text-align: center;
+    font-family: 'Fontdiner Swanky', cursive;
+    font-size: 65px;
+    margin: 50px;
+}
 
- 	border-radius: 25px;
- 	margin: 10px;
- 	padding: 10px;
- 	background-color: #ffd1c9;
- }
+.burgerAvailable {
+    font-family: 'Crafty Girls', cursive;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
 
- h2 {
-  	text-align: center;
- 	font-family: 'Fontdiner Swanky', cursive;
- 	font-size: 40px;
- 	margin: 50px;
- }
+    border-radius: 25px;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #b7ffc2;
+    border: none;
+}
 
+.burgerEaten {
+    font-family: 'Crafty Girls', cursive;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
 
- .addBurgerButton {
- 	font-family: 'Crafty Girls', cursive;
- 	font-weight: normal;
- 	font-size: 20px;
- 	text-align: center;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffd1c9;
+}
 
- 	border-radius: 25px;
- 	width: 100%;
- 	margin: 0;
- 	padding: 10px;
- 	background-color: #FFC04C;
- 	border: none;
- }
+h2 {
+     text-align: center;
+    font-family: 'Fontdiner Swanky', cursive;
+    font-size: 40px;
+    margin: 50px;
+}
+
+.formContainer {
+    background-color: orange;
+}
+
+.addBurgerButton {
+    font-family: 'Crafty Girls', cursive;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+
+    border-radius: 25px;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: #FFC04C;
+    border: none;
+}
+
+.addBurgerButton:hover {
+   background-color: #ffae19;
+}
 
 .addBurgerButton:active {
-	background-color: #FFC04C;
+   background-color: #FFC04C;
 }
 
+.burgerFooter {
+   background-color: #FFC04C;
+   padding: 20px 0;
+}
 
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
+.burgerName {
+   float: left;
+   width: 45%;
+}
 
-    h1, h2, h3, h4, h5, h6 {
-        color: teal;
+.customerEats {
+   float: right;
 
-    }
+    font-family: 'Crafty Girls', cursive;
+    font-weight: normal;
+    text-align: center;
+    color: white;
 
-    .myButton {
-        margin-right: 2px;
-        margin-bottom: 2px;
-        max-width: 220px;
-     
-    }
+    border-radius: 25px;
+    width: 45%;
+    height: 50px;
+    margin-top: 12px;
+    margin-right: 15px;
+    padding: 5px;
+    background-color: #FFC04C;
+    border: none;
+}
 
-    .myFooter {
+.customerEats:hover {
+   background-color: #ffae19;
+}
 
-    }
+#customerName {
+   float: left;
+   width: 70%;
+   margin-left: 30px;
+   border-bottom: none;
 
-    .myTinyImage {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 0px;
-        vertical-align: text-top;
-    }
-    .myCard {
-        min-height: 450px;
-    }
+   color: white !important;
+   font-size: 20px;
+}
 
-    .myCardContent {
-        padding:15px !important;
-    }
+#customerName:focus {
+   border-bottom: none;
+   box-shadow: none;
+}
 
-    #mySignature {
-        font-size: 1.1em;
-    }
+.eatBurgerButton {
+   float: right;
 
-    /* media queries for responsive text in footer*/
+    border-radius: 25px;
+    margin-top: 0px;
+    margin-right: 15px;
+    padding: 5px;
+   background-color: transparent;
+    border: none;
+}
 
-    /*phone only*/
-    @media only screen and (max-width: 599px) {
-        #mySignature {
-            font-size: .5em;
-            margin-bottom: 0px;
+input::-webkit-input-placeholder {
+   color: grey !important;
+   opacity: 0.35;
+}
 
-        }
-        .myCopyright {
-            min-height: 20px !important;
-            position: relative;
-            top: 10px;
-        }
-        .myTinyImage {
-            display: none;
-        }
-        .myFooter{
-            height: 75px;
-            min-height: 0px !important;
-        }
-        .myCard {
-            min-height: 400px;
-        }
+input:-moz-placeholder { /* Firefox 18- */
+   color: grey !important;  
+   opacity: 0.35;
+}
 
-        .myGif {
-            display: inline;
-        }
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: grey !important;  
+   opacity: 0.35;
+}
 
-    }
+input:-ms-input-placeholder {  
+   color: grey !important;  
+   opacity: 0.35;
+}
 
-    /*tablets, desktop*/
-    @media only screen and (min-width: 1024px) {
-        
-
-        #mySignature {
-        font-size: 1.1em;
-         }
-
-        .myCopyright {
-            min-height: 20px !important;
-            /*position: relative;
-            top: 10px;*/
-        }
-        .myTinyImage {
-            margin-left: 5px;
-            margin-right: 5px;
-            margin-top: 0px;
-            vertical-align: text-top;
-        }
-        .myFooter{
-            height: 75px;
-            min-height: 36px !important;
-        }
-
-        .myCard {
-            min-height: 730px;
-        }
-
-    }
+.fa-cutlery {
+ color: black;
+}
